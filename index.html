@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lavavajillas Compacto de Sobremesa | Cocina impecable en minutos</title>
+    <meta
+      name="description"
+      content="Deja de perder tiempo fregando. Cocina impecable, rutina más liviana y estilo moderno en espacios pequeños. Oferta limitada."
+    />
+    <style>
+      :root {
+        --bg: #f3f6fb;
+        --surface: #ffffff;
+        --text: #0e1a33;
+        --muted: #5f6c8a;
+        --line: #dbe3f3;
+        --primary: #1463ff;
+        --primary-strong: #0b47c8;
+        --ok: #0ba879;
+        --warning: #ffb020;
+        --shadow: 0 16px 36px rgba(8, 23, 55, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.94);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(10px);
+      }
+
+      .topbar__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+      }
+
+      .brand {
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+
+      .pill {
+        border-radius: 999px;
+        padding: 0.36rem 0.68rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        background: #edf3ff;
+        color: var(--primary-strong);
+      }
+
+      .cta {
+        border: 0;
+        border-radius: 0.8rem;
+        padding: 0.85rem 1.3rem;
+        background: linear-gradient(135deg, var(--primary), #3f7fff);
+        color: #fff;
+        font-weight: 800;
+        text-decoration: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 12px 24px rgba(20, 99, 255, 0.3);
+      }
+
+      .hero {
+        padding: 1.5rem 0 1rem;
+      }
+
+      .hero__grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 1.2rem;
+        align-items: center;
+      }
+
+      h1 {
+        margin: 0 0 0.75rem;
+        font-size: clamp(1.9rem, 4vw, 3.2rem);
+        line-height: 1.12;
+      }
+
+      .lead {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .trust {
+        margin-top: 0.95rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .trust span {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.35rem 0.6rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .hero-media {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-media img {
+        aspect-ratio: 4/3;
+        object-fit: cover;
+      }
+
+      .hero-media small {
+        display: block;
+        color: var(--muted);
+        font-size: 0.74rem;
+        padding: 0.45rem 0.65rem 0.65rem;
+      }
+
+      section {
+        padding: 1.5rem 0;
+      }
+
+      h2 {
+        margin: 0 0 0.6rem;
+        font-size: 1.48rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .text-muted {
+        color: var(--muted);
+      }
+
+      .grid-2,
+      .grid-3 {
+        display: grid;
+        gap: 0.8rem;
+        margin-top: 0.9rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 0.95rem;
+        padding: 0.9rem;
+      }
+
+      .card h3 {
+        margin: 0 0 0.35rem;
+        font-size: 1rem;
+      }
+
+      .step-id {
+        width: 1.85rem;
+        height: 1.85rem;
+        border-radius: 999px;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.45rem;
+        background: #ebf2ff;
+        color: var(--primary-strong);
+      }
+
+      .review .stars {
+        color: #f4b400;
+        font-size: 1rem;
+      }
+
+      .offer {
+        background: #101d3b;
+        color: #fff;
+        border-radius: 1rem;
+        padding: 1.1rem;
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .offer .price {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .offer .old {
+        margin-left: 0.45rem;
+        font-size: 1rem;
+        text-decoration: line-through;
+        color: #8fa8d8;
+      }
+
+      .stock {
+        color: #95ffd6;
+        font-weight: 800;
+      }
+
+      .countdown {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 0.7rem;
+        padding: 0.6rem;
+        font-size: 0.88rem;
+      }
+
+      .faq {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      details {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 0.8rem;
+        padding: 0.85rem;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 800;
+      }
+
+      .sticky-buy {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 60;
+        padding: 0.6rem 0.8rem calc(0.6rem + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.95);
+        border-top: 1px solid var(--line);
+      }
+
+      .sticky-buy .cta {
+        width: 100%;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+        padding: 1.5rem 0 5.2rem;
+      }
+
+      @media (max-width: 880px) {
+        .hero__grid,
+        .grid-2,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar .pill {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="brand">Compact Dish Mini</div>
+        <div class="pill">Más vendido de la semana</div>
+        <a class="cta" href="#comprar">Comprar ahora</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero__grid">
+          <div>
+            <h1>Tu cocina puede verse impecable todos los días, sin perder tiempo fregando.</h1>
+            <p class="lead">Compacto, elegante y sin instalación complicada. Mientras otros siguen lavando a mano, tú recuperas minutos valiosos cada día.</p>
+            <a class="cta" href="#comprar">Comprar ahora</a>
+            <div class="trust">
+              <span>🔒 Pago seguro</span>
+              <span>🚚 Envío rápido</span>
+              <span>✅ Garantía 30 días</span>
+              <span>⭐ 4.9/5 clientes felices</span>
+            </div>
+          </div>
+
+          <figure class="hero-media">
+            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1200&q=80" alt="Lavavajillas compacto de sobremesa" />
+            <small>Referencia visual del producto compacto de sobremesa (inspirado en el modelo compartido).</small>
+          </figure>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>El problema</h2>
+        <p class="text-muted">
+          Llegas cansado, ves platos acumulados y vuelves a perder tiempo en algo que no te aporta nada. Sin espacio para un lavavajillas tradicional, terminas atrapado en la misma rutina: desorden, esfuerzo y cero comodidad.
+        </p>
+      </section>
+
+      <section class="container">
+        <h2>La solución</h2>
+        <p class="text-muted">Este lavavajillas compacto está pensado para personas prácticas: cocinas pequeñas, agenda ocupada y estándar alto de higiene y orden.</p>
+        <div class="grid-2">
+          <article class="card">
+            <h3>🧩 Tamaño reducido</h3>
+            <p class="text-muted">Cabe sobre el mesón sin invadir tu cocina.</p>
+          </article>
+          <article class="card">
+            <h3>💧 Carga simple de agua</h3>
+            <p class="text-muted">Usa depósito superior o conexión directa al grifo.</p>
+          </article>
+          <article class="card">
+            <h3>🖥️ Panel digital intuitivo</h3>
+            <p class="text-muted">Programas listos para usar con un toque.</p>
+          </article>
+          <article class="card">
+            <h3>⚡ Bajo consumo + secado</h3>
+            <p class="text-muted">Lava, higieniza y seca con menos esfuerzo diario.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Cómo funciona</h2>
+        <div class="grid-3">
+          <article class="card">
+            <span class="step-id">1</span>
+            <h3>Agrega agua</h3>
+            <p class="text-muted">Llena el depósito superior o conecta la toma.</p>
+          </article>
+          <article class="card">
+            <span class="step-id">2</span>
+            <h3>Coloca los platos</h3>
+            <p class="text-muted">Carga la vajilla diaria de 2–3 personas.</p>
+          </article>
+          <article class="card">
+            <span class="step-id">3</span>
+            <h3>Selecciona el programa</h3>
+            <p class="text-muted">Inicia y deja que el equipo haga todo por ti.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Beneficios principales</h2>
+        <div class="grid-3">
+          <article class="card"><h3>⏱️ Ahorra hasta 35 min diarios</h3></article>
+          <article class="card"><h3>🏠 Ideal para espacios pequeños</h3></article>
+          <article class="card"><h3>🔧 Sin instalación compleja</h3></article>
+          <article class="card"><h3>✨ Diseño moderno y limpio</h3></article>
+          <article class="card"><h3>🧼 Mejor higiene que el lavado manual</h3></article>
+          <article class="card"><h3>😌 Menos estrés, más comodidad</h3></article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>La sensación que buscas al llegar a casa</h2>
+        <div class="grid-3">
+          <article class="card"><h3>🧠 Menos carga mental</h3><p class="text-muted">Cocinas, comes y sigues con tu día sin quedarte “atrapado” en el fregadero.</p></article>
+          <article class="card"><h3>✨ Imagen de orden y control</h3><p class="text-muted">Tu cocina se mantiene limpia, moderna y lista para recibir visitas en minutos.</p></article>
+          <article class="card"><h3>⏳ Tiempo para lo que sí importa</h3><p class="text-muted">Más descanso, estudio, trabajo o tiempo en pareja. Menos tareas repetitivas.</p></article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Prueba social</h2>
+        <div class="grid-3">
+          <article class="card review">
+            <div class="stars">★★★★★</div>
+            <p>"Vivo sola y por fin dejé de acumular platos. Me ahorra tiempo todos los días."</p>
+            <strong>— Camila R.</strong>
+          </article>
+          <article class="card review">
+            <div class="stars">★★★★★</div>
+            <p>"Lo compré para el depto de mi hijo estudiante. Fácil de usar y super práctico."</p>
+            <strong>— Andrés V.</strong>
+          </article>
+          <article class="card review">
+            <div class="stars">★★★★★</div>
+            <p>"En la oficina funcionó perfecto. Compacto, rápido y con buen resultado de limpieza."</p>
+            <strong>— Paula S.</strong>
+          </article>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3>Clientes en deptos y oficinas</h3><p class="text-muted">Uso diario en espacios reducidos con resultados consistentes.</p></article>
+          <article class="card"><h3>Reseñas verificadas 5★</h3><p class="text-muted">Experiencias reales enfocadas en ahorro de tiempo y comodidad.</p></article>
+          <article class="card"><h3>Soporte postcompra real</h3><p class="text-muted">Acompañamiento rápido para instalación y uso diario.</p></article>
+        </div>
+      </section>
+
+      <section class="container" id="comprar">
+        <h2>Oferta</h2>
+        <article class="offer">
+          <p class="stock">⚠️ Stock limitado: hoy quedan pocas unidades con precio promocional.</p>
+          <p><span class="price">$249.990</span><span class="old">$329.990</span></p>
+          <p>Incluye envío rápido + garantía de devolución de 30 días. Si esperas, el precio vuelve al valor normal.</p>
+          <p class="countdown">⏳ Oferta termina en <strong id="timer">14:59</strong></p>
+          <a class="cta" href="#">Comprar ahora</a>
+        </article>
+      </section>
+
+      <section class="container">
+        <h2>Garantía</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>🛡️ Devolución garantizada</h3>
+            <p class="text-muted">30 días para probarlo sin riesgo.</p>
+          </article>
+          <article class="card">
+            <h3>🔐 Pago seguro</h3>
+            <p class="text-muted">Transacciones protegidas y verificadas.</p>
+          </article>
+          <article class="card">
+            <h3>💬 Atención clara</h3>
+            <p class="text-muted">Soporte por WhatsApp y correo postcompra.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq">
+          <details>
+            <summary>¿Necesita instalación?</summary>
+            <p class="text-muted">No. Se puede usar con depósito superior o conexión a la toma de agua.</p>
+          </details>
+          <details>
+            <summary>¿Cuánta agua consume?</summary>
+            <p class="text-muted">Optimiza el consumo por ciclo y suele usar menos agua que lavar a mano varias tandas diarias.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto demora un ciclo?</summary>
+            <p class="text-muted">Según programa, entre 29 y 59 minutos aprox.</p>
+          </details>
+          <details>
+            <summary>¿Qué capacidad tiene?</summary>
+            <p class="text-muted">Capacidad pensada para la vajilla diaria de 2 a 3 personas.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 Compact Dish Mini · Menos platos, más tiempo libre.</footer>
+
+    <div class="sticky-buy">
+      <a class="cta" href="#comprar">Comprar ahora · Envío rápido</a>
+    </div>
+
+    <script>
+      (function () {
+        var timer = document.getElementById("timer");
+        if (!timer) return;
+        var total = 14 * 60 + 59;
+        setInterval(function () {
+          if (total <= 0) return;
+          total -= 1;
+          var m = String(Math.floor(total / 60)).padStart(2, "0");
+          var s = String(total % 60).padStart(2, "0");
+          timer.textContent = m + ":" + s;
+        }, 1000);
+      })();
+    </script>
+  </body>
+</html>
