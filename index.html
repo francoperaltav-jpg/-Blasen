@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compact Pro | Tu cocina impecable en minutos</title>
+    <meta
+      name="description"
+      content="No compres un lavavajillas: compra una cocina impecable, más tiempo libre y una rutina sin estrés en espacios pequeños."
+    />
+    <style>
+      :root {
+        --bg: #f3f6fc;
+        --surface: #ffffff;
+        --text: #151d34;
+        --muted: #5f6b89;
+        --primary: #0f62fe;
+        --primary-dark: #0043ce;
+        --success: #00a884;
+        --warning: #f4b400;
+        --border: #dce3f1;
+        --shadow: 0 12px 35px rgba(21, 29, 52, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.45;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .top-bar {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        border-bottom: 1px solid var(--border);
+        background: rgba(243, 246, 252, 0.94);
+        backdrop-filter: blur(10px);
+      }
+
+      .top-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        padding: 0.75rem 0;
+      }
+
+      .brand {
+        font-weight: 800;
+      }
+
+      .micro-proof {
+        background: #eaf2ff;
+        color: var(--primary-dark);
+        font-size: 0.85rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 0.8rem;
+        background: linear-gradient(135deg, var(--primary), #3e84ff);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 1.3rem;
+        box-shadow: 0 10px 20px rgba(15, 98, 254, 0.34);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero {
+        padding: 1.8rem 0 1rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.12fr 1fr;
+        gap: 1.4rem;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid #c9d7f4;
+        background: #fff;
+        color: #2c3f67;
+        font-size: 0.83rem;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0.8rem 0 0.65rem;
+        line-height: 1.12;
+        font-size: clamp(2rem, 4.1vw, 3.25rem);
+      }
+
+      .hero p {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 1.06rem;
+      }
+
+      .hero-benefits {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.55rem;
+        margin: 0.9rem 0 1.1rem;
+      }
+
+      .hero-benefits span {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 0.7rem;
+        padding: 0.45rem 0.7rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .trust {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 0.85rem;
+      }
+
+      .trust span {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.83rem;
+        font-weight: 600;
+      }
+
+      .hero-visual {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: var(--shadow);
+        padding: 0.7rem;
+      }
+
+      .hero-visual img {
+        width: 100%;
+        display: block;
+        border-radius: 0.75rem;
+        min-height: 330px;
+        object-fit: cover;
+      }
+
+      .stats {
+        margin-top: 0.75rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.6rem;
+      }
+
+      .stat {
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        padding: 0.65rem;
+        text-align: center;
+        background: #fff;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.1rem;
+      }
+
+      section {
+        padding: 1.65rem 0;
+      }
+
+      h2 {
+        margin: 0 0 0.7rem;
+        font-size: 1.5rem;
+      }
+
+      .muted {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .pain-solution {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .box {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 0.9rem;
+        padding: 1rem;
+      }
+
+      .box ul {
+        margin: 0.55rem 0 0;
+        padding-left: 1rem;
+      }
+
+      .box li + li {
+        margin-top: 0.4rem;
+      }
+
+      .identity {
+        background: #101b38;
+        color: #fff;
+        border-radius: 1rem;
+        padding: 1.15rem;
+        margin-top: 1rem;
+      }
+
+      .identity p {
+        margin: 0;
+        color: #cfddff;
+      }
+
+      .steps,
+      .benefits,
+      .reviews,
+      .guarantees {
+        display: grid;
+        gap: 0.8rem;
+        margin-top: 0.9rem;
+      }
+
+      .steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .benefits {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .reviews,
+      .guarantees {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 0.9rem;
+        padding: 1rem;
+      }
+
+      .number {
+        width: 1.9rem;
+        height: 1.9rem;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #e8f0ff;
+        color: var(--primary-dark);
+        font-weight: 800;
+        margin-bottom: 0.45rem;
+      }
+
+      .offer {
+        background: linear-gradient(150deg, #101b38, #1a2d56);
+        color: #fff;
+        border-radius: 1rem;
+        padding: 1.2rem;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .countdown {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+
+      .price {
+        font-size: clamp(2rem, 4vw, 2.9rem);
+        font-weight: 800;
+      }
+
+      .old {
+        margin-left: 0.5rem;
+        text-decoration: line-through;
+        color: #adc3ee;
+        font-size: 1rem;
+      }
+
+      .urgency {
+        color: #99ffd5;
+        font-weight: 700;
+      }
+
+      details {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 0.85rem;
+        padding: 0.85rem;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .sticky-buy {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 45;
+        background: rgba(255, 255, 255, 0.96);
+        border-top: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+        padding: 0.6rem 0.8rem calc(0.65rem + env(safe-area-inset-bottom));
+      }
+
+      .sticky-buy .btn {
+        width: 100%;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+        padding: 1.7rem 0 5.2rem;
+      }
+
+      @media (max-width: 880px) {
+        .hero-grid,
+        .pain-solution,
+        .steps,
+        .benefits,
+        .reviews,
+        .guarantees,
+        .stats,
+        .hero-benefits {
+          grid-template-columns: 1fr;
+        }
+
+        .micro-proof {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container top-content">
+        <strong class="brand">Compact Pro</strong>
+        <span class="micro-proof">+2.800 cocinas pequeñas ya optimizadas</span>
+        <a class="btn" href="#comprar">Comprar ahora</a>
+      </div>
+    </div>
+
+    <header class="hero container">
+      <div class="hero-grid">
+        <div>
+          <span class="badge">Para departamentos, oficinas y personas que viven solas</span>
+          <h1>No compres un lavavajillas. Compra tiempo libre y una cocina impecable todos los días.</h1>
+          <p>
+            Lava tus platos sin esfuerzo, incluso en espacios pequeños. Compacto, eficiente y sin instalación
+            complicada para que tu rutina se vea y se sienta más ordenada.
+          </p>
+
+          <div class="hero-benefits">
+            <span>⏱️ Hasta 35 min libres al día</span>
+            <span>🏠 Entra en cocinas pequeñas</span>
+            <span>🧼 Higiene superior al lavado manual</span>
+            <span>🔧 Sin obras ni instalación compleja</span>
+          </div>
+
+          <a href="#comprar" class="btn">Comprar ahora</a>
+          <div class="trust">
+            <span>🔒 Pago seguro</span>
+            <span>🚚 Envío rápido</span>
+            <span>✅ Garantía 30 días</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1200&q=80"
+            alt="Lavavajillas compacto de sobremesa en cocina moderna"
+          />
+          <div class="stats">
+            <div class="stat"><strong>4.9/5</strong><small>reseñas verificadas</small></div>
+            <div class="stat"><strong>+2.800</strong><small>clientes felices</small></div>
+            <div class="stat"><strong>24-72h</strong><small>despacho nacional</small></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="container">
+        <h2>El problema real no son los platos: es tu rutina</h2>
+        <p class="muted">Cada día que lavas a mano, pierdes minutos de descanso, orden y energía mental.</p>
+
+        <div class="pain-solution">
+          <article class="box">
+            <h3>Sin Compact Pro</h3>
+            <ul>
+              <li>Se acumulan platos y la cocina se ve desordenada.</li>
+              <li>Terminas cansado después de comer o trabajar.</li>
+              <li>No cabe un lavavajillas tradicional en tu espacio.</li>
+              <li>Tu tiempo libre desaparece en tareas repetitivas.</li>
+            </ul>
+          </article>
+
+          <article class="box">
+            <h3>Con Compact Pro</h3>
+            <ul>
+              <li>Cocina limpia en minutos sin fricción.</li>
+              <li>Más comodidad y menos estrés diario.</li>
+              <li>Formato compacto pensado para espacios pequeños.</li>
+              <li>Te libera tiempo para estudiar, descansar o trabajar.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="identity">
+          <h3>Tu cocina también comunica quién eres</h3>
+          <p>
+            Compact Pro es para personas prácticas: las que valoran su tiempo, cuidan su higiene y prefieren una casa
+            ordenada sin complicarse.
+          </p>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>La solución que funciona desde el día 1</h2>
+        <p class="muted">Beneficios primero: menos esfuerzo, mejor higiene, más espacio y más control.</p>
+        <div class="benefits">
+          <article class="card"><strong>🧩 Tamaño reducido</strong><p>Encaja en mesones pequeños y departamentos.</p></article>
+          <article class="card"><strong>💧 Carga de agua flexible</strong><p>Depósito superior o conexión a toma.</p></article>
+          <article class="card"><strong>🖥️ Panel digital simple</strong><p>Programas claros y fáciles de elegir.</p></article>
+          <article class="card"><strong>⚡ Bajo consumo</strong><p>Optimiza agua y energía por ciclo.</p></article>
+          <article class="card"><strong>🌬️ Secado integrado</strong><p>Vajilla lista para guardar.</p></article>
+          <article class="card"><strong>✨ Diseño moderno</strong><p>Eleva el look de cualquier cocina.</p></article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Cómo funciona</h2>
+        <div class="steps">
+          <article class="card">
+            <span class="number">1</span>
+            <h3>Agrega agua</h3>
+            <p>Llena el depósito superior o conecta a la toma.</p>
+          </article>
+          <article class="card">
+            <span class="number">2</span>
+            <h3>Coloca tus platos</h3>
+            <p>Capacidad ideal para vajilla diaria de 2–3 personas.</p>
+          </article>
+          <article class="card">
+            <span class="number">3</span>
+            <h3>Selecciona programa y listo</h3>
+            <p>Elige el ciclo y deja que lave + seque por ti.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Prueba social real</h2>
+        <p class="muted">Miles de personas ya eligieron una cocina más limpia y una rutina más liviana.</p>
+        <div class="reviews">
+          <article class="card">
+            <p>★★★★★</p>
+            <p>"Soy estudiante y vivo en un estudio. Me ahorra muchísimo tiempo y mi cocina siempre se ve ordenada."</p>
+            <strong>— Valentina G.</strong>
+          </article>
+          <article class="card">
+            <p>★★★★★</p>
+            <p>"En la oficina lo usamos todos los días. Práctico, rápido y ocupa casi nada."</p>
+            <strong>— Diego L.</strong>
+          </article>
+          <article class="card">
+            <p>★★★★★</p>
+            <p>"Pensé que era un lujo, pero en realidad fue una inversión en comodidad diaria."</p>
+            <strong>— Fernanda C.</strong>
+          </article>
+        </div>
+      </section>
+
+      <section id="comprar" class="container">
+        <h2>Oferta activa por tiempo limitado</h2>
+        <article class="offer">
+          <span class="countdown">⏳ Esta oferta termina en <strong id="timer">14:59</strong></span>
+          <p class="urgency">⚠️ Stock limitado para despacho inmediato.</p>
+          <p>
+            <span class="price">$249.990</span>
+            <span class="old">$329.990</span>
+          </p>
+          <p>Incluye garantía de 30 días + soporte prioritario post compra.</p>
+          <a class="btn" href="#">Comprar ahora</a>
+        </article>
+      </section>
+
+      <section class="container">
+        <h2>Garantía y seguridad</h2>
+        <div class="guarantees">
+          <article class="card">
+            <h3>🛡️ Garantía de devolución</h3>
+            <p>Si no se adapta a tu rutina, tienes 30 días para devolverlo.</p>
+          </article>
+          <article class="card">
+            <h3>🔐 Pago protegido</h3>
+            <p>Checkout cifrado y métodos de pago confiables.</p>
+          </article>
+          <article class="card">
+            <h3>💬 Atención al cliente</h3>
+            <p>Te ayudamos por WhatsApp y correo antes y después de comprar.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Necesita instalación?</summary>
+          <p>No. Puedes usarlo con depósito superior o conectarlo a la toma fácilmente.</p>
+        </details>
+        <details>
+          <summary>¿Cuánta agua consume?</summary>
+          <p>Consume menos agua que lavar a mano varios platos al día.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto demora un ciclo?</summary>
+          <p>Entre 29 y 59 minutos según el programa seleccionado.</p>
+        </details>
+        <details>
+          <summary>¿Qué capacidad tiene?</summary>
+          <p>Capacidad diaria para 2 a 3 personas: platos, vasos, cubiertos y tazas.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer>© 2026 Compact Pro · Menos platos, más vida.</footer>
+
+    <div class="sticky-buy">
+      <a class="btn" href="#comprar">Comprar ahora · Quiero mi cocina impecable</a>
+    </div>
+
+    <script>
+      (function () {
+        const timer = document.getElementById('timer');
+        if (!timer) return;
+        let totalSeconds = 14 * 60 + 59;
+        setInterval(() => {
+          const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+          const seconds = String(totalSeconds % 60).padStart(2, '0');
+          timer.textContent = `${minutes}:${seconds}`;
+          if (totalSeconds > 0) totalSeconds -= 1;
+        }, 1000);
+      })();
+    </script>
+  </body>
+</html>
