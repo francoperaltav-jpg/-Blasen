@@ -3,24 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lavavajillas Compacto | Lava sin esfuerzo</title>
+    <title>Lavavajillas Compacto de Sobremesa | Ahorra Tiempo y Espacio</title>
     <meta
       name="description"
-      content="Ahorra tiempo, espacio y esfuerzo con el lavavajillas compacto de sobremesa. Ideal para departamentos, oficinas y personas que viven solas."
+      content="Lava tus platos sin esfuerzo aunque tengas poco espacio. Lavavajillas compacto de sobremesa, sin instalación compleja, con envío rápido y garantía."
     />
     <style>
       :root {
-        --bg: #f5f7fb;
-        --card: #ffffff;
-        --text: #111827;
-        --muted: #4b5563;
-        --brand: #0f766e;
-        --brand-dark: #115e59;
+        --bg: #f3f6fb;
+        --surface: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --brand: #0ea5a4;
+        --brand-dark: #0f766e;
         --accent: #f59e0b;
         --danger: #dc2626;
-        --line: #e5e7eb;
-        --radius: 16px;
-        --shadow: 0 8px 30px rgba(17, 24, 39, 0.08);
+        --line: #e2e8f0;
+        --success-bg: #ecfeff;
+        --radius: 18px;
+        --shadow: 0 12px 35px rgba(15, 23, 42, 0.09);
       }
 
       * {
@@ -30,10 +31,11 @@
       html,
       body {
         margin: 0;
+        padding: 0;
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
           Noto Sans, sans-serif;
-        color: var(--text);
         background: var(--bg);
+        color: var(--text);
         line-height: 1.45;
         scroll-behavior: smooth;
       }
@@ -44,7 +46,7 @@
       }
 
       .container {
-        width: min(1100px, 92%);
+        width: min(1120px, 92%);
         margin: 0 auto;
       }
 
@@ -53,9 +55,9 @@
       }
 
       .card {
-        background: var(--card);
-        border: 1px solid var(--line);
+        background: var(--surface);
         border-radius: var(--radius);
+        border: 1px solid var(--line);
         box-shadow: var(--shadow);
       }
 
@@ -63,16 +65,15 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        gap: 8px;
-        background: var(--brand);
-        color: #fff;
         text-decoration: none;
         border: none;
         border-radius: 12px;
-        font-weight: 700;
-        padding: 15px 24px;
+        background: var(--brand);
+        color: #fff;
+        font-weight: 800;
+        padding: 14px 24px;
         min-height: 52px;
-        transition: transform 0.2s ease, background 0.2s ease;
+        transition: 0.2s ease;
         cursor: pointer;
       }
 
@@ -86,106 +87,128 @@
         width: 100%;
       }
 
-      .hero {
-        padding: 40px 0 20px;
-      }
-
-      .hero-grid {
-        display: grid;
-        gap: 28px;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: #d1fae5;
-        color: #065f46;
-        font-weight: 700;
-        padding: 7px 12px;
-        border-radius: 999px;
-        margin-bottom: 14px;
-        font-size: 0.9rem;
-      }
-
       h1,
       h2,
       h3 {
+        line-height: 1.18;
         margin: 0;
-        line-height: 1.2;
       }
 
       h1 {
-        font-size: clamp(1.9rem, 4vw, 3rem);
+        font-size: clamp(2rem, 4.2vw, 3.2rem);
         margin-bottom: 12px;
       }
 
       h2 {
-        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-size: clamp(1.55rem, 3.2vw, 2.2rem);
         margin-bottom: 10px;
       }
 
       .lead {
         color: var(--muted);
+        margin: 0 0 18px;
         font-size: 1.05rem;
-        margin: 0 0 22px;
       }
 
-      .trust-row {
+      .hero {
+        padding: 36px 0 24px;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        background: #ccfbf1;
+        color: #115e59;
+        padding: 7px 13px;
+        margin-bottom: 14px;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .hero-points {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+
+      .hero-points li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        color: #1e293b;
+        font-weight: 600;
+      }
+
+      .hero-points li::before {
+        content: "✔";
+        color: var(--brand-dark);
+      }
+
+      .trust-icons {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
         margin-top: 16px;
       }
 
-      .trust-item {
-        background: #f9fafb;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        font-size: 0.88rem;
-        padding: 10px;
+      .trust-icons div {
         text-align: center;
-        font-weight: 600;
+        background: #f8fafc;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        font-size: 0.86rem;
+        font-weight: 700;
+        padding: 9px;
       }
 
-      .hero-image-wrap {
-        padding: 14px;
+      .hero-media {
+        padding: 12px;
       }
 
-      .hero-image {
+      .hero-media img {
         border-radius: 14px;
         aspect-ratio: 4 / 3;
         object-fit: cover;
       }
 
-      .problem-solution {
+      .split {
         display: grid;
         gap: 16px;
       }
 
       .content-pad {
-        padding: 24px;
+        padding: 22px;
       }
 
-      .bullet {
-        margin: 14px 0 0;
+      .list {
+        margin: 12px 0 0;
         padding: 0;
         list-style: none;
         display: grid;
-        gap: 10px;
+        gap: 9px;
       }
 
-      .bullet li {
+      .list li {
+        color: #1f2937;
         display: flex;
         align-items: flex-start;
-        gap: 10px;
-        color: #1f2937;
+        gap: 8px;
       }
 
-      .bullet li::before {
-        content: "✔";
+      .list li::before {
+        content: "•";
         color: var(--brand);
-        font-weight: 900;
+        font-size: 1.25rem;
+        line-height: 1;
       }
 
       .steps,
@@ -208,17 +231,11 @@
         height: 34px;
         display: inline-grid;
         place-items: center;
-        border-radius: 50%;
-        background: #ccfbf1;
+        border-radius: 999px;
+        background: #cffafe;
         color: #0f766e;
         font-weight: 800;
         margin-bottom: 10px;
-      }
-
-      .benefit h3,
-      .step h3 {
-        margin-bottom: 8px;
-        font-size: 1.07rem;
       }
 
       .muted {
@@ -226,16 +243,17 @@
         margin: 0;
       }
 
-      .stars {
-        color: var(--accent);
-        font-size: 1.15rem;
-        letter-spacing: 1px;
+      .benefit h3,
+      .step h3 {
         margin-bottom: 8px;
+        font-size: 1.05rem;
       }
 
-      .review strong {
-        display: block;
-        margin-top: 8px;
+      .stars {
+        color: var(--accent);
+        letter-spacing: 1px;
+        margin-bottom: 7px;
+        font-size: 1.1rem;
       }
 
       .offer {
@@ -244,54 +262,58 @@
       }
 
       .offer::after {
-        content: "Oferta limitada";
+        content: "Stock limitado";
         position: absolute;
+        right: -41px;
         top: 14px;
-        right: -42px;
         transform: rotate(32deg);
         background: var(--danger);
         color: #fff;
-        font-weight: 700;
-        font-size: 0.78rem;
-        padding: 6px 48px;
+        font-weight: 800;
+        font-size: 0.76rem;
+        padding: 6px 46px;
       }
 
-      .price-wrap {
+      .price-line {
         display: flex;
-        align-items: baseline;
         gap: 10px;
-        margin: 14px 0 8px;
+        align-items: baseline;
+        margin: 14px 0 6px;
       }
 
       .price-old {
-        color: #6b7280;
         text-decoration: line-through;
+        color: #64748b;
       }
 
       .price-new {
         font-size: 2rem;
         font-weight: 900;
-        color: #111827;
       }
 
       .stock {
+        margin-top: 0;
         color: var(--danger);
         font-weight: 700;
-        margin-top: 0;
       }
 
-      .guarantees {
-        margin-top: 14px;
+      .mini-guarantees {
         display: grid;
         gap: 10px;
+        margin-top: 12px;
       }
 
-      .guarantee-item {
-        background: #f9fafb;
+      .mini-guarantees div {
+        background: #f8fafc;
         border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 12px;
+        border-radius: 11px;
+        padding: 11px;
         font-weight: 600;
+      }
+
+      .guarantee-box {
+        background: var(--success-bg);
+        border: 1px solid #a5f3fc;
       }
 
       .sticky-cta {
@@ -299,15 +321,15 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(255, 255, 255, 0.96);
         border-top: 1px solid var(--line);
-        backdrop-filter: blur(8px);
-        padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(7px);
         z-index: 999;
+        padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
       }
 
       .sticky-inner {
-        width: min(1100px, 100%);
+        width: min(1120px, 100%);
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr auto;
@@ -315,42 +337,33 @@
         gap: 10px;
       }
 
-      .sticky-price {
-        font-size: 0.95rem;
-        font-weight: 700;
+      .sticky-text {
+        font-size: 0.94rem;
+        font-weight: 800;
       }
 
-      .sticky-price span {
-        color: var(--brand);
-        font-size: 1.2rem;
+      .sticky-text span {
+        color: var(--brand-dark);
+        font-size: 1.15rem;
       }
 
-      .spacer-bottom {
+      .page-bottom-space {
         height: 78px;
       }
 
       @media (min-width: 760px) {
-        .hero {
-          padding-top: 48px;
-        }
-
         .hero-grid {
-          grid-template-columns: 1.05fr 0.95fr;
+          grid-template-columns: 1.04fr 0.96fr;
           align-items: center;
         }
 
-        .problem-solution {
+        .split {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .steps,
         .benefits,
-        .reviews,
-        .faq-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .benefits {
+        .reviews {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
@@ -369,23 +382,29 @@
     <header class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">🔥 Más vendido para cocinas pequeñas</span>
+          <span class="badge">⚡ Ideal para cocinas pequeñas y tráfico frío</span>
           <h1>Lava tus platos sin esfuerzo, incluso en espacios pequeños.</h1>
-          <p class="lead">Compacto, eficiente y sin instalación complicada. Ahorra tiempo todos los días y disfruta una cocina limpia en minutos.</p>
+          <p class="lead">
+            Compacto, eficiente y sin instalación complicada. Recupera tiempo cada día,
+            mantén tu cocina impecable y olvídate del lavado manual.
+          </p>
           <a class="btn" href="#oferta">Comprar ahora</a>
-
-          <div class="trust-row" aria-label="Íconos de confianza">
-            <div class="trust-item">🔒 Pago seguro</div>
-            <div class="trust-item">🚚 Envío rápido</div>
-            <div class="trust-item">✅ Garantía 30 días</div>
+          <ul class="hero-points" aria-label="beneficios rápidos">
+            <li>Ahorra hasta 40 minutos diarios.</li>
+            <li>Se adapta a departamentos, oficinas y habitaciones estudiantiles.</li>
+            <li>Activa el ciclo y sigue con tu día.</li>
+          </ul>
+          <div class="trust-icons" aria-label="íconos de confianza">
+            <div>🔒 Pago seguro</div>
+            <div>🚚 Envío rápido</div>
+            <div>🛡️ Garantía real</div>
           </div>
         </div>
 
-        <div class="card hero-image-wrap">
+        <div class="card hero-media">
           <img
-            class="hero-image"
-            src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=1200&q=80"
-            alt="Lavavajillas compacto de sobremesa moderno sobre una cocina"
+            src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=1280&q=80"
+            alt="Lavavajillas compacto de sobremesa sobre mesón de cocina moderna"
           />
         </div>
       </div>
@@ -393,27 +412,33 @@
 
     <main>
       <section class="section">
-        <div class="container problem-solution">
+        <div class="container split">
           <article class="card content-pad">
             <h2>El problema</h2>
-            <p class="muted">Tu cocina es pequeña, los platos se acumulan y terminas perdiendo tiempo valioso cada día lavando a mano. Más desorden, más cansancio, menos comodidad.</p>
-            <ul class="bullet">
-              <li>No hay espacio para un lavavajillas tradicional.</li>
-              <li>Lavar a mano te quita tiempo y energía.</li>
-              <li>La cocina se ve desordenada rápidamente.</li>
-              <li>Falta de practicidad en la rutina diaria.</li>
+            <p class="muted">
+              Lavar a mano todos los días te roba tiempo, cansa y deja la cocina desordenada.
+              Si tu espacio es reducido, parece imposible tener comodidad real.
+            </p>
+            <ul class="list">
+              <li>No entra un lavavajillas tradicional.</li>
+              <li>Perdés tiempo valioso después de cada comida.</li>
+              <li>Los platos acumulados generan estrés visual.</li>
+              <li>La rutina diaria se vuelve más pesada de lo necesario.</li>
             </ul>
           </article>
 
           <article class="card content-pad">
             <h2>La solución</h2>
-            <p class="muted">Este lavavajillas compacto está diseñado para simplificar tu día sin obras ni instalaciones complejas. Lo usas en minutos y mantienes higiene real sin esfuerzo.</p>
-            <ul class="bullet">
-              <li>Tamaño reducido ideal para departamentos y oficinas.</li>
-              <li>Carga de agua sencilla en depósito superior o conexión directa.</li>
-              <li>Panel digital intuitivo con programas automáticos.</li>
-              <li>Bajo consumo de agua y energía.</li>
-              <li>Función de secado para platos listos para guardar.</li>
+            <p class="muted">
+              Este lavavajillas compacto de sobremesa está pensado para darte resultados
+              rápidos, higiene superior y cero complicaciones desde el primer uso.
+            </p>
+            <ul class="list">
+              <li>Tamaño reducido para cocinas pequeñas.</li>
+              <li>Carga de agua fácil por depósito superior o conexión directa.</li>
+              <li>Panel digital intuitivo para elegir ciclos en segundos.</li>
+              <li>Bajo consumo para usarlo todos los días sin culpa.</li>
+              <li>Función de secado para guardar la vajilla más rápido.</li>
             </ul>
           </article>
         </div>
@@ -422,22 +447,28 @@
       <section class="section">
         <div class="container">
           <h2>Cómo funciona</h2>
-          <p class="lead">Empieza a usarlo hoy mismo en solo 3 pasos.</p>
+          <p class="lead">Empieza hoy mismo en 3 pasos simples y visuales.</p>
           <div class="steps">
             <article class="card step">
               <div class="step-number">1</div>
               <h3>Agrega agua o conecta la toma</h3>
-              <p class="muted">Llena el depósito superior en segundos o conéctalo al grifo si prefieres uso continuo.</p>
+              <p class="muted">
+                Llená el depósito superior o conectalo al grifo. Sin obras ni instalación compleja.
+              </p>
             </article>
             <article class="card step">
               <div class="step-number">2</div>
-              <h3>Coloca tus platos</h3>
-              <p class="muted">Carga vajilla diaria de forma ordenada: platos, tazas, cubiertos y utensilios pequeños.</p>
+              <h3>Coloca los platos</h3>
+              <p class="muted">
+                Cargá platos, vasos, tazas y cubiertos de uso diario en una sola tanda compacta.
+              </p>
             </article>
             <article class="card step">
               <div class="step-number">3</div>
-              <h3>Selecciona programa y listo</h3>
-              <p class="muted">Elige el ciclo en el panel digital y deja que el equipo limpie e higienice por ti.</p>
+              <h3>Selecciona el programa y listo</h3>
+              <p class="muted">
+                Elegí el ciclo en el panel digital y dejá que el equipo lave e higienice por vos.
+              </p>
             </article>
           </div>
         </div>
@@ -446,31 +477,31 @@
       <section class="section">
         <div class="container">
           <h2>Beneficios principales</h2>
-          <p class="lead">Resultados prácticos que se sienten desde el primer día.</p>
+          <p class="lead">Más comodidad, menos esfuerzo y una cocina siempre lista.</p>
           <div class="benefits">
             <article class="card benefit">
-              <h3>Ahorra hasta 40 minutos al día</h3>
-              <p class="muted">Menos tiempo fregando, más tiempo para estudiar, descansar o trabajar.</p>
+              <h3>Ahorra hasta 40 min al día</h3>
+              <p class="muted">Sumá tiempo libre para estudiar, descansar o trabajar sin interrupciones.</p>
             </article>
             <article class="card benefit">
-              <h3>Ideal para espacios pequeños</h3>
-              <p class="muted">Cabe en cocinas compactas sin ocupar el espacio de un equipo tradicional.</p>
+              <h3>Perfecto para espacios reducidos</h3>
+              <p class="muted">Ideal para departamentos pequeños, oficinas, estudiantes y personas solas.</p>
             </article>
             <article class="card benefit">
-              <h3>Instalación simple</h3>
-              <p class="muted">Sin obras ni técnicos: úsalo con depósito o conexión básica en minutos.</p>
+              <h3>Sin instalación compleja</h3>
+              <p class="muted">Uso inmediato con depósito de agua o conexión simple al grifo.</p>
             </article>
             <article class="card benefit">
-              <h3>Diseño moderno</h3>
-              <p class="muted">Líneas limpias que combinan con cualquier estilo de cocina actual.</p>
+              <h3>Diseño moderno y minimalista</h3>
+              <p class="muted">Combina con cocinas actuales y se ve premium sobre la encimera.</p>
             </article>
             <article class="card benefit">
-              <h3>Mayor higiene</h3>
-              <p class="muted">Lava con temperatura y ciclos constantes superiores al lavado manual común.</p>
+              <h3>Higiene superior al lavado manual</h3>
+              <p class="muted">Ciclos consistentes para una limpieza más profunda en cada uso.</p>
             </article>
             <article class="card benefit">
-              <h3>Comodidad total</h3>
-              <p class="muted">Presiona un botón y evita la rutina pesada de lavar después de cada comida.</p>
+              <h3>Comodidad total diaria</h3>
+              <p class="muted">Un botón, un ciclo y cero fricción después de comer.</p>
             </article>
           </div>
         </div>
@@ -478,23 +509,29 @@
 
       <section class="section">
         <div class="container">
-          <h2>Clientes felices</h2>
-          <p class="lead">Prueba social real de quienes ya simplificaron su rutina.</p>
+          <h2>Prueba social</h2>
+          <p class="lead">Clientes reales que ya compraron y no quieren volver a lavar a mano.</p>
           <div class="reviews">
             <article class="card review">
               <div class="stars">★★★★★</div>
-              <p class="muted">"Vivo solo y este lavavajillas me cambió la vida. Mi cocina siempre está ordenada y ahorro muchísimo tiempo."</p>
-              <strong>— Martín R., estudiante</strong>
+              <p class="muted">
+                “Vivo en un monoambiente y me solucionó todo. En 10 minutos ya está cargado y listo.”
+              </p>
+              <strong>— Camila T., estudiante</strong>
             </article>
             <article class="card review">
               <div class="stars">★★★★★</div>
-              <p class="muted">"Lo usamos en la oficina todos los días. Compacto, rápido y fácil de usar. Muy recomendado."</p>
-              <strong>— Laura P., administrativa</strong>
+              <p class="muted">
+                “Lo compramos para la oficina y fue un antes y un después. Práctico, rápido y prolijo.”
+              </p>
+              <strong>— Andrés V., co-working manager</strong>
             </article>
             <article class="card review">
               <div class="stars">★★★★☆</div>
-              <p class="muted">"Pensé que necesitaría instalación compleja, pero fue conectar y empezar. Excelente compra."</p>
-              <strong>— Diego M., diseñador freelance</strong>
+              <p class="muted">
+                “Tenía dudas por la instalación, pero fue súper simple. Se paga solo por el tiempo que ahorra.”
+              </p>
+              <strong>— Julia P., freelance</strong>
             </article>
           </div>
         </div>
@@ -503,18 +540,22 @@
       <section class="section" id="oferta">
         <div class="container">
           <article class="card content-pad offer">
-            <h2>Oferta especial de hoy</h2>
-            <p class="muted">Aprovecha el descuento por lanzamiento antes de que se agote el stock.</p>
-            <div class="price-wrap">
+            <h2>Oferta especial por tiempo limitado</h2>
+            <p class="muted">
+              Hoy podés llevarlo con descuento de lanzamiento. Cuando se agoten las unidades,
+              vuelve al precio regular.
+            </p>
+            <div class="price-line">
               <span class="price-old">Antes $349.990</span>
               <span class="price-new">$249.990</span>
             </div>
-            <p class="stock">⚠ Quedan solo 17 unidades con este precio.</p>
+            <p class="stock">⚠ Quedan 17 unidades disponibles a este precio.</p>
             <a class="btn btn-block" href="#comprar">Comprar ahora</a>
-            <div class="guarantees">
-              <div class="guarantee-item">🛡 Garantía de devolución de 30 días</div>
-              <div class="guarantee-item">💳 Pagos protegidos y encriptados</div>
-              <div class="guarantee-item">📞 Atención al cliente por WhatsApp y correo</div>
+
+            <div class="mini-guarantees">
+              <div>✅ Garantía de devolución de 30 días.</div>
+              <div>🔐 Pago seguro con encriptación de datos.</div>
+              <div>📞 Atención al cliente por WhatsApp y correo.</div>
             </div>
           </article>
         </div>
@@ -522,34 +563,56 @@
 
       <section class="section" id="comprar">
         <div class="container">
+          <article class="card content-pad guarantee-box">
+            <h2>Compra sin riesgo</h2>
+            <p class="lead">
+              Si no notas una mejora real en tu rutina, tenés 30 días para pedir devolución.
+              Queremos que compres con total tranquilidad.
+            </p>
+            <a class="btn" href="#oferta">Quiero mi lavavajillas ahora</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
           <h2>Preguntas frecuentes</h2>
           <div class="faq-grid">
             <article class="card faq-item">
               <h3>¿Necesita instalación?</h3>
-              <p class="muted">No. Puedes usar el depósito superior sin instalación fija o conectarlo al grifo en pocos minutos.</p>
+              <p class="muted">
+                No necesariamente. Podés usar el depósito superior sin instalación fija,
+                o conectarlo al grifo de forma simple.
+              </p>
             </article>
             <article class="card faq-item">
               <h3>¿Cuánta agua consume?</h3>
-              <p class="muted">Consume significativamente menos que lavar a mano una carga similar, optimizando cada ciclo.</p>
+              <p class="muted">
+                Su consumo es reducido frente al lavado manual equivalente,
+                ya que optimiza el uso de agua en cada ciclo.
+              </p>
             </article>
             <article class="card faq-item">
               <h3>¿Cuánto demora un ciclo?</h3>
-              <p class="muted">Dependiendo del programa, entre 29 y 89 minutos. Ideal para rutina diaria sin esfuerzo.</p>
+              <p class="muted">Dependiendo del programa, entre 29 y 89 minutos.</p>
             </article>
             <article class="card faq-item">
               <h3>¿Qué capacidad tiene?</h3>
-              <p class="muted">Capacidad para una carga diaria compacta: platos, vasos, tazas, cubiertos y utensilios pequeños.</p>
+              <p class="muted">
+                Capacidad para vajilla diaria compacta: platos, vasos, tazas, cubiertos
+                y utensilios pequeños.
+              </p>
             </article>
           </div>
         </div>
       </section>
     </main>
 
-    <div class="spacer-bottom" aria-hidden="true"></div>
+    <div class="page-bottom-space" aria-hidden="true"></div>
 
-    <div class="sticky-cta" role="complementary" aria-label="Barra de compra rápida">
+    <div class="sticky-cta" aria-label="barra de compra fija">
       <div class="sticky-inner">
-        <div class="sticky-price">Precio de hoy: <span>$249.990</span></div>
+        <div class="sticky-text">Oferta hoy: <span>$249.990</span></div>
         <a class="btn" href="#oferta">Comprar ahora</a>
       </div>
     </div>
